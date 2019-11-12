@@ -9,19 +9,19 @@ namespace DDona.POCCore3.Domain.Entities
 {
     public class Projeto : Entity
     {
-        private readonly IList<Funcionario> _funcionarios;
+        private readonly IList<FuncionarioProjeto> _funcionarios;
 
         public string Titulo { get; private set; }
         public DateTime DtInicio { get; private set; }
         public DateTime? DtFim { get; private set; }
-        public IReadOnlyCollection<Funcionario> Funcionarios { get { return _funcionarios.ToArray(); } }
+        public IReadOnlyCollection<FuncionarioProjeto> Funcionarios { get { return _funcionarios.ToArray(); } }
 
         public Projeto(string titulo, DateTime dtInicio) : base()
         {
             Titulo = titulo;
             DtInicio = dtInicio;
             Status = true;
-            _funcionarios = new List<Funcionario>();
+            _funcionarios = new List<FuncionarioProjeto>();
 
             _validator = new ProjetoValidation();
         }

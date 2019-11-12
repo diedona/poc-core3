@@ -9,18 +9,18 @@ namespace DDona.POCCore3.Domain.Entities
 {
     public class Funcionario : Entity
     {
-        private readonly IList<Projeto> _projetos;
+        private readonly IList<FuncionarioProjeto> _projetos;
 
         public string Nome { get; private set; }
         public decimal Salario { get; private set; }
-        public IReadOnlyCollection<Projeto> Projetos { get { return _projetos.ToArray(); } }
+        public IReadOnlyCollection<FuncionarioProjeto> Projetos { get { return _projetos.ToArray(); } }
 
         public Funcionario(string nome, decimal salario) : base()
         {
             Nome = nome;
             Salario = salario;
             Status = true;
-            _projetos = new List<Projeto>();
+            _projetos = new List<FuncionarioProjeto>();
 
             _validator = new ProjetoValidation();
         }

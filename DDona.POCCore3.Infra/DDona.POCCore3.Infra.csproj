@@ -10,10 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configurations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DDona.POCCore3.Domain\DDona.POCCore3.Domain.csproj" />
     <ProjectReference Include="..\DDona.POCCore3.Shared\DDona.POCCore3.Shared.csproj" />
   </ItemGroup>

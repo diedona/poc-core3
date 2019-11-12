@@ -19,6 +19,7 @@ namespace DDona.POCCore3.Domain.Entities
         {
             Nome = nome;
             Salario = salario;
+            Status = true;
             _projetos = new List<Projeto>();
 
             _validator = new ProjetoValidation();

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+    <Folder Include="JoinEntities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DDona.POCCore3.Domain\DDona.POCCore3.Domain.csproj" />
+    <ProjectReference Include="..\DDona.POCCore3.Shared\DDona.POCCore3.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

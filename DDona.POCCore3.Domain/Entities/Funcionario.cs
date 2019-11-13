@@ -13,7 +13,7 @@ namespace DDona.POCCore3.Domain.Entities
 
         public string Nome { get; private set; }
         public decimal Salario { get; private set; }
-        public IEnumerable<FuncionarioProjeto> Projetos { get { return _projetos.AsReadOnly(); } }
+        public IEnumerable<FuncionarioProjeto> ProjetoFuncionario { get { return _projetos.AsReadOnly(); } }
 
         public Funcionario(string nome, decimal salario) : base()
         {

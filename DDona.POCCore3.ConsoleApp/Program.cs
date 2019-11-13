@@ -13,16 +13,16 @@ namespace DDona.POCCore3.ConsoleApp
             {
                 var funcionarios = context
                     .Funcionario
-                    .Include(x => x.Projetos)
+                    .Include(x => x.ProjetoFuncionario)
                     .ThenInclude(x => x.Projeto)
                     .ToList();
 
                 foreach (var funcionario in funcionarios)
                 {
                     Console.WriteLine($"{funcionario.Nome} está nesses projetos:");
-                    foreach (var projeto in funcionario.Projetos)
+                    foreach (var projetoFuncionario in funcionario.ProjetoFuncionario)
                     {
-                        Console.WriteLine(projeto.Projeto.Titulo);
+                        Console.WriteLine(projetoFuncionario.Projeto.Titulo);
                     }
                     Console.WriteLine();
                 }

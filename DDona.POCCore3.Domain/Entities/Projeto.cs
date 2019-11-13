@@ -14,7 +14,7 @@ namespace DDona.POCCore3.Domain.Entities
         public string Titulo { get; private set; }
         public DateTime DtInicio { get; private set; }
         public DateTime? DtFim { get; private set; }
-        public IEnumerable<FuncionarioProjeto> Funcionarios { get { return _funcionarios.AsReadOnly(); } }
+        public IEnumerable<FuncionarioProjeto> FuncionarioProjeto { get { return _funcionarios.AsReadOnly(); } }
 
         public Projeto(string titulo, DateTime dtInicio) : base()
         {

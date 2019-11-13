@@ -14,14 +14,14 @@ namespace DDona.POCCore3.Infra.Configurations
             builder.HasKey(x => new { x.IdFuncionario, x.IdProjeto });
 
             builder
-                .HasOne(x => x.Funcionario)
-                .WithMany(x => x.Projetos)
-                .HasForeignKey(x => x.IdFuncionario);
-
-            builder
                 .HasOne(x => x.Projeto)
                 .WithMany(x => x.Funcionarios)
                 .HasForeignKey(x => x.IdProjeto);
+
+            builder
+                .HasOne(x => x.Funcionario)
+                .WithMany(x => x.Projetos)
+                .HasForeignKey(x => x.IdFuncionario);
         }
     }
 }

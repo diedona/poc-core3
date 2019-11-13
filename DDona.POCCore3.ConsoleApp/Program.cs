@@ -1,4 +1,5 @@
 ﻿using DDona.POCCore3.Infra.DbContexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
@@ -10,7 +11,21 @@ namespace DDona.POCCore3.ConsoleApp
         {
             using (var context = new PocContextFactory().CreateDbContext())
             {
-                var funcionarios = context.Funcionario.ToList();
+                var funcionarios = context
+                    .Funcionario
+                    .Include(x => x.Projetos)
+                    .ThenInclude(x => x.Projeto)
+                    .ToList();
+
+                foreach (var funcionario in funcionarios)
+                {
+                    Console.WriteLine($"{funcionario.Nome} está nesses projetos:");
+                    foreach (var projeto in funcionario.Projetos)
+                    {
+                        Console.WriteLine(projeto.Projeto.Titulo);
+                    }
+                    Console.WriteLine();
+                }
             }
         }
     }

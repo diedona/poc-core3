@@ -9,12 +9,12 @@ namespace DDona.POCCore3.Domain.Entities
 {
     public class Projeto : Entity
     {
-        private readonly IList<FuncionarioProjeto> _funcionarios;
+        private readonly List<FuncionarioProjeto> _funcionarios;
 
         public string Titulo { get; private set; }
         public DateTime DtInicio { get; private set; }
         public DateTime? DtFim { get; private set; }
-        public IReadOnlyCollection<FuncionarioProjeto> Funcionarios { get { return _funcionarios.ToArray(); } }
+        public IEnumerable<FuncionarioProjeto> Funcionarios { get { return _funcionarios.AsReadOnly(); } }
 
         public Projeto(string titulo, DateTime dtInicio) : base()
         {

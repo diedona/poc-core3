@@ -14,6 +14,11 @@ namespace DDona.POCCore3.Infra.Configurations
             builder
                 .ToTable("Funcionario")
                 .HasKey(x => x.Id);
+
+            builder
+                .HasMany(x => x.Projetos)
+                .WithOne()
+                .Metadata.PrincipalToDependent.SetPropertyAccessMode(PropertyAccessMode.Field);
         }
     }
 }

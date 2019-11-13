@@ -14,6 +14,10 @@ namespace DDona.POCCore3.Infra.DbContexts
         public DbSet<Projeto> Projeto { get; set; }
         public DbSet<FuncionarioProjeto> FuncionarioProjeto { get; set; }
 
+        public PocContext() { }
+
+        public PocContext(DbContextOptions<PocContext> options) : base(options) { }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

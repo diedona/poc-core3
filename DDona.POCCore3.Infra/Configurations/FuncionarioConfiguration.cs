@@ -17,7 +17,7 @@ namespace DDona.POCCore3.Infra.Configurations
 
             builder
                 .HasMany(x => x.ProjetoFuncionario)
-                .WithOne()
+                .WithOne(x => x.Funcionario)
                 .Metadata.PrincipalToDependent.SetField("_projetos");
         }
     }
